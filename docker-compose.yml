@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  opencv-docker-golang:
+    image: opencv-docker-golang
+    build: .
+    ports:
+      - :
