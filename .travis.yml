@@ -1,0 +1,6 @@
+language: ruby
+
+services:
+  - docker
+
+install: "docker build -t walawala:latest -t walawala:latest ."
