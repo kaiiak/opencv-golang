@@ -4,3 +4,7 @@ services:
   - docker
 
 install: "docker build -t walawala:latest -t walawala:latest ."
+
+after_success:
+  - docker login -u"$DOCKERHUB_USERNAME" -p"$DOCKERHUB_PASSWORD"
+  - docker push iamkai/opencv-docker-golang:latest
