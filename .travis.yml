@@ -1,7 +1,9 @@
+language: go
+
 services:
   - docker
 
-install: "docker build -t walawala:latest -t walawala:latest ."
+install: "docker build -t opencv:latest -t opencv:latest ."
 
 after_success:
   - docker login -u"$DOCKERHUB_USERNAME" -p"$DOCKERHUB_PASSWORD"
