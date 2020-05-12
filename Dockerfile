@@ -3,8 +3,7 @@ FROM golang:latest as builder
 
 LABEL maintainer="kaiiak,aNxFi37X@outlook.com"
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
-    && apk add --no-cache ca-certificates \
+RUN apk add --no-cache ca-certificates \
     && apk add --no-cache git build-base musl-dev alpine-sdk cmake make gcc g++ libc-dev linux-headers
 
 ARG OPENCV_VERSION="4.0.1"
