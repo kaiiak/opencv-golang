@@ -7,5 +7,5 @@ jobs:
       - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
       - docker build -t opencv-docker-golang .
       - docker images
-      - docker tag opencv-docker-golang $DOCKER_USERNAME/opencv-docker-golang
-      - docker push $DOCKER_USERNAME/opencv-docker-golang
+      - docker tag opencv-docker-golang $DOCKERHUB_USERNAME/opencv-docker-golang
+      - docker push $DOCKERHUB_USERNAME/opencv-docker-golang
