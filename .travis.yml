@@ -1,10 +1,11 @@
-language: go
+dist: trusty
 
-services:
-  - docker
-
-install: "docker build -t opencv:latest -t opencv:latest ."
-
-after_success:
-  - docker login -u"$DOCKERHUB_USERNAME" -p"$DOCKERHUB_PASSWORD"
-  - docker push iamkai/opencv-docker-golang:latest
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+      - docker build -t opencv-docker-golang .
+      - docker images
+      - docker tag opencv-docker-golang $DOCKER_USERNAME/opencv-docker-golang
+      - docker push $DOCKER_USERNAME/opencv-docker-golang
