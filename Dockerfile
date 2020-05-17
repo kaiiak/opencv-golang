@@ -37,7 +37,7 @@ RUN curl -Lo opencv.zip https://github.com/opencv/opencv/archive/${OPENCV_VERSIO
 
 # Final stage
 FROM golang:alpine as opencv
-RUN apk --no-cache add ca-certificates gcc
+RUN apk --no-cache add ca-certificates build-base
 COPY --from=builder /usr/local/lib64 /usr/local/lib64
 LABEL maintainer="kaiiak,aNxFi37X@outlook.com"
 
