@@ -1,5 +1,5 @@
 
-FROM golang:1.14.2-alpine3.11 as builder
+FROM golang:alpine as builder
 
 LABEL maintainer="kaiiak,aNxFi37X@outlook.com"
 
@@ -36,7 +36,7 @@ RUN curl -Lo opencv.zip https://github.com/opencv/opencv/archive/${OPENCV_VERSIO
     cd /go && rm -rf opencv*
 
 # Final stage
-FROM golang:1.14.2-alpine3.11 as opencv
+FROM golang:alpine as opencv
 RUN apk --no-cache add ca-certificates gcc
 COPY --from=builder /usr/local/lib64 /usr/local/lib64
 LABEL maintainer="kaiiak,aNxFi37X@outlook.com"
