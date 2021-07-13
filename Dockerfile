@@ -6,7 +6,7 @@ LABEL maintainer="kaiiak,aNxFi37X@outlook.com"
 RUN apk add --no-cache ca-certificates \
     && apk add --no-cache git build-base musl-dev alpine-sdk cmake make gcc g++ libc-dev linux-headers
 
-ARG OPENCV_VERSION="4.0.1"
+ARG OPENCV_VERSION="4.5.3"
 ENV OPENCV_VERSION $OPENCV_VERSION
 
 RUN rm -rf /var/cache/apk/
