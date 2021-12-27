@@ -3,7 +3,7 @@ LABEL maintainer="kaiiak,aNxFi37X@outlook.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt update && apt install -y --no-install-recommends libopencv-dev curl ca-certificates tzdata && \ 
+RUN apt update && apt install -y --no-install-recommends libopencv-dev curl ca-certificates tzdata libdlib-dev libblas-dev libatlas-base-dev liblapack-dev libjpeg-turbo8-dev && \ 
     rm -rf /var/lib/apt/lists/*
 
 RUN curl -LO https://golang.google.cn/dl/go1.17.5.linux-amd64.tar.gz && \
