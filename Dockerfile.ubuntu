@@ -1,0 +1,4 @@
+FROM ubuntu:20.04 as opencv
+LABEL maintainer="kaiiak,aNxFi37X@outlook.com"
+
+RUN apt update && apt install -y libopencv-dev
