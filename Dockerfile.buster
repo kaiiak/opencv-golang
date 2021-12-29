@@ -39,9 +39,7 @@ RUN curl -Lo opencv.zip https://github.com/opencv/opencv/archive/${OPENCV_VERSIO
     -D OPENCV_GENERATE_PKGCONFIG=ON .. && \
     make -j $(nproc --all) && \
     make preinstall && make install && ldconfig && \
-    cd / && rm -rf opencv* && \
-    rm -rf /var/lib/apt/lists/*
-
+    cd / && rm -rf opencv* 
 
 ENV PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH
 ENV LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
