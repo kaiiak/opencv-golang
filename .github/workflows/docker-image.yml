@@ -43,6 +43,6 @@ jobs:
         with:
           context: .
           push: true
-          file: ${{ context }}/Dockerfile.ubuntu
+          file: Dockerfile.ubuntu
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
