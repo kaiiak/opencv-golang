@@ -7,18 +7,16 @@ on:
     branches: [master]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      # - name: Build the Docker image with golang:buster
-      #   run: docker build . --file Dockerfile.buster --tag opencv-docker-golang:buster
-
-      - name: Build the Docker image with ubuntu:20.04
-        run: docker build . --file Dockerfile.ubuntu --tag opencv-docker-golang:ubuntu
-
-      # - name: Build the Docker image with dlib
-      #   run: docker build . --file Dockerfile.dlib --tag opencv-docker-golang:dlib
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Build the Docker image with golang:buster
+  #       run: docker build . --file Dockerfile.buster --tag opencv-docker-golang:buster
+  #     - name: Build the Docker image with ubuntu:20.04
+  #       run: docker build . --file Dockerfile.ubuntu --tag opencv-docker-golang:ubuntu
+  #     - name: Build the Docker image with dlib
+  #       run: docker build . --file Dockerfile.dlib --tag opencv-docker-golang:dlib
   push_to_registries:
     runs-on: ubuntu-latest
     permissions:
