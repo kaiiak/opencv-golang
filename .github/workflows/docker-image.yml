@@ -43,7 +43,6 @@ jobs:
         with:
           context: .
           push: true
-          build-args: |
-            f=Dockerfile.ubuntu
+          file: ${{context}}/Dockerfile.ubuntu
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
